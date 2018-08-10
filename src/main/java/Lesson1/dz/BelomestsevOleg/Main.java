@@ -6,8 +6,11 @@ import java.util.Collections;
 
 public class Main {
     public static void main(String[] args) {
-        Integer[] m = {1,2,3,4,5,6};
-        moveArrayElements(m,5,1);                               // задание 1
+        Integer[] m = {1,2,3,4,5,6};                                     // задание 1
+        moveArrayElements(m,5,1);                               //по номеру элемента
+        for (int i: m) System.out.print(i + " ");
+        System.out.println();
+        moveArrayElements(6,2, m);                              //указываем непосредственно элементы
         for (int i: m) System.out.print(i + " ");
 
         ArrayList<Integer> arrayList = arrayToArrayList(m);             // задание 2
@@ -35,8 +38,15 @@ public class Main {
         System.out.println("Вес после пересыпания:\t box:" + box.getWegiht() + "\t box3: " + box3.getWegiht());
 
     }
-    public  static <T> void moveArrayElements (T[] m, int n1, int n2){ // Поменять местами n1 и n2
+    public  static <T> void moveArrayElements (T[] m, int n1, int n2){ // Поменять местами n1 и n2 по номеру позиции
         if (n1 >= m.length || n2 >= m.length) throw new IllegalArgumentException("moveArrayElements:Номер элемента больше длины массива!");
+        T temp = m[n1];
+        m[n1] = m[n2];
+        m[n2] = temp;
+    }
+    public  static <T> void moveArrayElements ( T o1, T o2, T[] m){ // Поменять местами по элементам
+        int n1 = Arrays.asList(m).indexOf(o1);
+        int n2 = Arrays.asList(m).indexOf(o2);
         T temp = m[n1];
         m[n1] = m[n2];
         m[n2] = temp;
