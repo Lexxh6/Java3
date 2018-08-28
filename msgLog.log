@@ -1,0 +1,4 @@
+авг 28, 2018 1:09:20 PM java.util.logging.LogManager$RootLogger log
+INFO: msgLog nick2: Hi
+авг 28, 2018 1:09:26 PM java.util.logging.LogManager$RootLogger log
+INFO: msgLog nick1: Hello!
